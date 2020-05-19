@@ -17,25 +17,6 @@ class Racun {
 	int _trenutno;
 };
 
-int Racun::_brojacRacuna = 0;
-
-ostream& operator<<(ostream& cout, const Racun& racun)
-{
-	cout << "Broj racuna: " << racun._brojacRacuna << endl;
-	cout << "Naziv\tKol\tCijena\n\n";
-
-	float iznos = 0;
-	for (size_t i = 0; i < racun._trenutno; i++)
-	{
-		cout << racun._artikli[i] << endl;
-		iznos += racun._artikli[i].GetKolicina() * racun._artikli[i].GetCijena();
-	}
-
-	cout << "Iznos racuna: " << iznos << endl;
-
-	return cout;
-}
-
 void main() {
 	KupljeniArtikal cokolada("Milka", 2.29);//naziv i cijena artikla
 	KupljeniArtikal sok("Jucy", 1.38);
